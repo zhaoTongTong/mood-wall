@@ -1,0 +1,13 @@
+{
+  "presets": [
+    [
+      "env", {
+      "targets": {
+        "browsers": ["last 2 versions", "ie >= 7"]  // 指定一个环境且仅转译这个环境中缺少的特性。
+      }
+    }],
+      "react",
+      "stage-0"  // 将es6转译为es5， 和babel-preset-es2015一个功效
+  ]
+//  "plugins": ["transform-es2015-arrow-functions"]
+}

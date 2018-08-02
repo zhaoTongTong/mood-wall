@@ -8,7 +8,8 @@ module.exports = {
   entry: ["babel-polyfill", "./src/index.js"],
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: "main.js"
+    filename: "main.js",
+    publicPath: '/'  //在服务器中使用，以确保正确提供文件http://localhost:3000
   },
   module: {
     rules: [

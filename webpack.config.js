@@ -6,6 +6,7 @@ module.exports = {
   devtool: 'eval-source-map',
   // entry: __dirname + '/src/index.js',
   entry: ["babel-polyfill", "./src/index.js"],
+  // entry: ["babel-polyfill", "./src/index.js", "webpack-hot-middleware/client"],
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: "main.js",
@@ -27,7 +28,9 @@ module.exports = {
       inject: true,
       template: './src/index.html'   //模板html路径
     }),
-    new webpack.HotModuleReplacementPlugin()  // 热更新
+    // new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.HotModuleReplacementPlugin(),  // 热更新
+    // new webpack.NoEmitOnErrorsPlugin()
     ],
 
 

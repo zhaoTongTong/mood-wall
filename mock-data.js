@@ -1,9 +1,9 @@
 const data = {
+  pageView: 2,   //浏览量
   baseInfo: {
     nickName: "", // 昵称
     faceUrl: "",  //头像
     sign: "", //签名
-    pageView: 2   //浏览量
   },
   moodList: [
     {

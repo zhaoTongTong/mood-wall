@@ -5,8 +5,11 @@ const path = require('path')
 module.exports = {
   devtool: 'eval-source-map',
   // entry: __dirname + '/src/index.js',
-  entry: ["babel-polyfill", "./src/index.js"],
-  // entry: ["babel-polyfill", "./src/index.js", "webpack-hot-middleware/client"],
+  entry: [
+    // 'webpack-hot-middleware/client?path=http://localhost:3000/__webpack_hmr',
+    "babel-polyfill",
+    "./src/index.js"
+  ],
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: "main.js",
@@ -38,6 +41,13 @@ module.exports = {
     contentBase: "./dist",//本地服务器所加载的页面所在的目录
     historyApiFallback: true,//不跳转
     hot: true,  // 热更新
-    inline: true//实时刷新
+    inline: true,//实时刷新
+    //设置代理，代理到服务器
+    // proxy:{
+    //   target: 'http://localhost:3000',
+    //   // host: 'app.58.com',
+    //   changeOrigin: true,
+    //   secure: false,
+    // }
   }
 }
